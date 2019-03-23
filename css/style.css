@@ -1,0 +1,83 @@
+body {
+    background: radial-gradient(circle at center, red 0, blue, green 100%);
+}
+
+.tree {
+    position: absolute;
+    top: 50px;
+    width: 200px;
+    stroke-width: 5px;
+    stroke: green;
+    animation: tree 3s infinite;
+}
+
+.tree:nth-child(1) {
+ left: 200px;
+}
+
+.tree:nth-child(2) {
+    left: 50%;
+}
+
+.tree:nth-child(3) {
+    right: 50px;
+}
+
+#car {
+    position: absolute;
+    top: 200px;
+    left: 100px;
+    width: 600px;
+    /* animation: wheel 3s infinite;
+    animation-direction: reverse;
+    transform-origin: 0 0; */
+}
+
+.wheel {
+    animation: wheel 1s infinite;
+    transform-origin: center;
+    transform-box: fill-box;
+}
+
+.light {
+    animation: light 1s infinite;
+    transform-origin: center;
+    transform-box: fill-box;
+}
+
+@keyframes tree {
+    0% {
+        transform: translate(0, 0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate(-1000px, 0);
+        opacity: 1;
+    }
+}
+
+
+@keyframes light {
+    0% {
+        fill: red;
+    }
+
+    50% {
+        fill: blue;
+    }
+
+    100% {
+        fill: red;
+    }
+}
+
+@keyframes wheel {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(0, 10px) rotate(360deg);
+    }
+}
